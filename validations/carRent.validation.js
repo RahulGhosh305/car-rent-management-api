@@ -10,7 +10,7 @@ const getCar = {
 const addCar = {
     body: Joi.object({
         name: Joi.string().required(),
-        body: Joi.string().required(),
+        rentPrice: Joi.string().required(),
         color: Joi.string().required(),
         seat: Joi.number().required()
     })
@@ -22,7 +22,7 @@ const updateCar = {
     }),
     body: Joi.object({
         name: Joi.string().required(),
-        body: Joi.string().required(),
+        rentPrice: Joi.string().required(),
         color: Joi.string().required(),
         seat: Joi.number().required()
     })

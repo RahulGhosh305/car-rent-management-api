@@ -13,7 +13,7 @@ const carSchema = new Schema({
         required: true,
         trim: true
     },
-    body : {
+    rentPrice : {
         type: String,
         required: true,
         trim: true
