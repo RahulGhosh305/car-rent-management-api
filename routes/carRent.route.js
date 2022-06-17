@@ -1,6 +1,12 @@
 const express = require("express");
 const router = express.Router();
 
+const {
+    getCarValidation,
+    addCarValidation,
+    updateCarValidation,
+    deleteCarValidation
+} = require("./../validations/carRent.validation")
 
 const { 
     getCars, 
@@ -11,9 +17,9 @@ const {
 } = require("./../controllers/carRent.controller");
 
 router.get("/", getCars);
-router.get("/:_id", getCar);
-router.post("/", addCar);
-router.put("/:_id", updateCar)
-router.delete("/:_id", deleteCar)
+router.get("/:_id", getCarValidation, getCar);
+router.post("/", addCarValidation, addCar);
+router.put("/:_id", updateCarValidation, updateCar)
+router.delete("/:_id", deleteCarValidation, deleteCar)
 
 module.exports = router;
