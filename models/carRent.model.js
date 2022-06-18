@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const {Schema} = mongoose;
+const { Schema } = mongoose;
 
 const status = Object.freeze({
     active: 'active',
@@ -8,22 +8,22 @@ const status = Object.freeze({
 });
 
 const carSchema = new Schema({
-    name : {
+    name: {
         type: String,
         required: true,
         trim: true
     },
-    rentPrice : {
+    rentPrice: {
         type: String,
         required: true,
         trim: true
     },
-    color : {
+    color: {
         type: String,
         required: true,
         trim: true
     },
-    seat : {
+    seat: {
         type: Number,
         required: true,
         trim: true
@@ -47,4 +47,4 @@ carSchema.methods.toJSON = function () {
 }
 
 const model = mongoose.model("addCar", carSchema);
-module.exports = {CarRentModel: model, CarRentStatus: status};
+module.exports = { CarRentModel: model, CarRentStatus: status };

@@ -23,12 +23,12 @@ const addCustomer = catchAsync(async (req, res) => {
 const updateCustomer = catchAsync(async (req, res) => {
     const { name, phone, email, address, selectedCar } = req.body;
     const modify = await CustomerModel.updateOne({ _id: req.params._id }, { name, phone, email, address, selectedCar });
-    return apiResponse(res, httpStatus.ACCEPTED, { message: "Information Updated"}, modify);
+    return apiResponse(res, httpStatus.ACCEPTED, { message: "Information Updated" }, modify);
 })
 
 const deleteCustomer = catchAsync(async (req, res) => {
-    const drop = await CustomerModel.deleteOne({_id: req.params._id});
-    return apiResponse(res, httpStatus.ACCEPTED, { message: "Information Deleted"}, drop);
+    const drop = await CustomerModel.deleteOne({ _id: req.params._id });
+    return apiResponse(res, httpStatus.ACCEPTED, { message: "Information Deleted" }, drop);
 })
 
 module.exports = {

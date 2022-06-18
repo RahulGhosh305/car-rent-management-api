@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const {Schema} = mongoose;
+const { Schema } = mongoose;
 
 const customerSchema = new Schema({
     name: {
@@ -24,12 +24,12 @@ const customerSchema = new Schema({
         required: true,
         trim: true
     },
-    selectedCar : {
+    selectedCar: {
         type: String,
         required: true,
         trim: true
     }
-}, {timestamps: true})
+}, { timestamps: true })
 
 customerSchema.methods.toJSON = function () {
     let obj = this.toObject();
@@ -42,4 +42,4 @@ customerSchema.methods.toJSON = function () {
 }
 
 const model = mongoose.model("customers", customerSchema)
-module.exports = {CustomerModel : model}
+module.exports = { CustomerModel: model }

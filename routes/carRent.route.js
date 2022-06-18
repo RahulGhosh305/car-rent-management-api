@@ -8,9 +8,9 @@ const {
     deleteCarValidation
 } = require("./../validations/carRent.validation")
 
-const { 
-    getCars, 
-    getCar, 
+const {
+    getCars,
+    getCar,
     addCar,
     updateCar,
     deleteCar

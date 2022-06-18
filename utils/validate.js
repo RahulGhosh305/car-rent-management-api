@@ -1,4 +1,4 @@
-const {pick} = require('lodash');
+const { pick } = require('lodash');
 const Joi = require('joi');
 const httpStatus = require("http-status");
 const apiResponse = require("./apiResponse");
@@ -8,19 +8,19 @@ const validate = (schema) => async (req, res, next) => {
     const object = pick(req, Object.keys(validSchema));
     const { value, error } = Joi.compile(validSchema)
         .prefs({ errors: { label: 'key' } })
-        .validate(object, {abortEarly: false});
+        .validate(object, { abortEarly: false });
 
     if (error) {
         const err = {};
         await error.details.forEach(e => {
             err[e.path[1]] = e.message.toString();
         });
-        return apiResponse(res, httpStatus.UNPROCESSABLE_ENTITY, {message: "Validation Error"}, err)
+        return apiResponse(res, httpStatus.UNPROCESSABLE_ENTITY, { message: "Validation Error" }, err)
     }
 
 
     Object.assign(req, value);
-    return  next();
+    return next();
 };
 
-module.exports = {validate};
+module.exports = { validate };

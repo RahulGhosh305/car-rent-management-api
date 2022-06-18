@@ -14,7 +14,7 @@ module.exports = (res, status, data = {}, optional = {}) => {
     returnObject["data"] = data && data.data ? data.data : null;
     returnObject["message"] = data && data.message ? data.message : null;
     returnObject["stack"] = typeof optional !== "undefined" && Object.keys(optional).length > 0 ? optional : null;
-    
+
     res.status(status);
     return res.json(returnObject);
 }
